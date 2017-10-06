@@ -1,0 +1,83 @@
+@import 'reset.css';
+
+@mixin middle {
+    width: 1206px;
+    margin: 0 auto;
+}
+
+.comp-detail {
+    @include middle;
+    overflow: hidden;
+    margin-top:40px;
+    dl {
+        height: 256px;
+        dt {
+            float:left;
+            padding-left:53px;
+            }
+        
+        dd {
+            float:left;
+            font-size: 16px;
+           
+            div:nth-child(1) {
+                float:left;
+                margin: 27px 0;
+                padding: 0 40px 0 200px;
+                line-height: 50px;
+                border-right: 1px solid #999;
+                text-align: center;
+                p {
+                    padding: 6px;
+                    i {
+                        float: left;
+                        width:35px;
+                        height: 35px;
+                        background: url(../imgs/company/compbg.png) no-repeat -6px top;
+                    }
+                    .i1{
+                        background-position-y: -47px;
+                    }
+                    .i2{
+                        background-position-y: -95px;
+                    }
+                    span {
+                        float: left;
+                        cursor: pointer;
+                    }
+                }
+            }
+            div:nth-child(2) {
+                float:left;
+                margin:27px 0 27px 30px;
+                p:nth-child(1) {
+                    line-height: 50px;
+                }        
+                .comp-star {
+                    line-height: 36px;
+                    span {
+                        display: inline-block;
+                        width:17px;
+                        height: 17px;
+                        background: url(../imgs/company/star.png) no-repeat left top;
+                    }
+                }      
+            }
+        }
+    }
+    
+    .comp-bottom {
+        h2 {
+           height:50px;
+           line-height: 50px;
+           text-align: center; 
+           border-bottom: 1px solid #999;
+        }
+        p {
+            text-indent: 2em;
+            font-size: 14px;
+            line-height: 31px;
+        }
+    }
+    
+}

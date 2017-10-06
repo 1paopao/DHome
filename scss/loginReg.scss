@@ -1,0 +1,207 @@
+#con{
+    width: 1200px;
+    margin: 68px auto;
+    overflow: hidden;
+    background: url(../imgs/loginbg.jpg) no-repeat left top;
+    form{
+        float: right;
+        position: relative;
+        width: 462px;
+        height: 442px;
+        border: 1px solid #aeaeae;
+        margin-top: 12px;
+        .login-con{
+            width: 374px;
+            margin: 50px auto 0;
+            h3{
+                overflow: hidden;
+                width: 100%;
+                a{
+                    display: inherit;
+                    float: left;
+                    height: 52px;
+                    line-height: 52px;
+                    width: 50%;
+                    text-align: center;
+                    color: #717171;
+                    border-bottom: 1px solid #717171;
+                }
+                .login-active{
+                    color: #ff9263;
+                    border-bottom: 1px solid #ff9263;
+                }
+            }
+            
+            //登录
+            #login{
+                width: 100%;
+                overflow: hidden;
+                input{
+                    display: block;
+                    height: 42px;
+                    width: 340px;
+                    border: 1px solid #a9a9a9;
+                    margin: 30px auto 15px;
+                    text-indent: 25px;
+                }
+                #login-login{
+                    color: #903401;
+                    background: #ff8e4f;
+                    font-size: 20px;
+                    text-indent: 0;
+                    margin: 20px auto 8px;
+                }
+                .login-pwd{
+                    width: 340px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    a{
+                        float: right;
+                        color: #989898;
+                        font-size: 18px;
+                    }
+                }
+                .login-bottom{
+                    width: 100%;
+                    overflow: hidden;
+                    a{
+                        float: left;
+                       display: block;
+                       width: 100px;
+                       height: 20px;
+                       text-indent: 25px; 
+                       font-size: 16px;
+                       line-height: 20px;
+                       margin-left: 25px;
+                       background: url(../imgs/icon.png)no-repeat left 2px;
+                    }
+                    #qqLogin{
+                        background-position-y: -30px;
+                    }
+                }
+                #username-judge{
+                    position: absolute;
+                    top: 182px;
+                    left: 60px;
+                    color: red;
+                }
+                #password-judge{
+                    position: absolute;
+                    top: 256px;
+                    left: 60px;
+                    color: red;
+                }
+            }
+            
+            //注册
+            
+            #register{
+                display: none;
+                width: 100%;
+                overflow: hidden;
+                .reg{
+                    width: 100%;
+                    overflow: hidden;
+                    margin-top: 20px;
+                    label{
+                        float: left;
+                        display: block;
+                        width: 115px;
+                        color: 848484;
+                        font-size: 18px;
+                        height: 28px;
+                        line-height: 28px;
+                        text-indent: 22px;
+                    }
+                    input{
+                        float: left;
+                        width: 232px;
+                        height: 28px;
+                        border: 1px solid #979797;
+                    }
+                }
+                
+                .code{
+                    input{
+                       float: left;
+                       width: 166px; 
+                       margin-left: 20px;
+                    }
+                    a{
+                        float: left;
+                        display:block;
+                        height: 28px;
+                        line-height: 28px;
+                        background: #999999;
+                        margin-left: 22px;
+                        font-size: 12px;
+                        padding: 0 5px;
+                        text-align: center;
+                        color: black;
+                    }
+                }
+                .agreement{
+                    width: 100%;
+                    overflow: hidden;
+                    margin-top: 10px;
+                    input{
+                        float: left;
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #000000;
+                        margin-left: 20px;
+                        color: #f5b788;
+                    }
+                    p{
+                      float: left;
+                      width: 300px;
+                      margin-left: 12px;
+                      height: 20px;
+                      line-height: 20px;
+                      font-size: 14px;
+                      color: #777777;  
+                    }
+                } 
+                
+                #register-register{
+                    width: 348px;
+                    height: 40px;
+                    background: #ff8e4f;
+                    font-size: 18px;
+                    color: #662600;
+                    margin: 8px 20px 0;
+                }              
+            }
+            
+            #usnJudge{
+                position: absolute;
+                top: 155px;
+                left: 160px;
+                color: red;
+                font-size: 12px;
+            }
+            #pwd1Judge{
+                position: absolute;
+                top: 206px;
+                left: 160px;
+                color: red;
+                font-size: 12px;
+            }
+            #pwd2Judge{
+                position: absolute;
+                top: 255px;
+                left: 160px;
+                color: red;
+                font-size: 12px;
+            }
+            #phoneJudge{
+                position: absolute;
+                top: 305px;
+                left: 160px;
+                color: red;
+                font-size: 12px;
+            }
+          
+        }
+    }
+}

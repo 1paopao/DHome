@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录注册</title>
+	</head>
+	<body>
+		<div id="nav">
+			
+		</div>
+		<div id="con">
+			<form>
+				<div class="login-con">
+					<h3 id="login-tunp">
+						<a class="login-active" href="javascript:;">账号登录</a>
+						<a href="javascript:;">免费注册</a>
+					</h3>
+					<!--  登录入口  -->
+					<div id="login">
+						<input type="text" name="username" id="username" placeholder="用户名/手机" />
+						<span id="username-judge"></span>
+						<input type="password" name="password" id="password" placeholder="密码" />
+						<span id="password-judge"></span>
+						<div class="login-pwd">
+							<a href="javascript:;">忘记密码 ?</a>
+						</div>
+						<input id="login-login" type="submit" value="立即登录" />
+						<div class="login-bottom">
+							<a href="#">微博登录</a>
+							<a id="qqLogin" href="#">QQ登录</a>
+						</div>
+					</div>
+					
+					<!-- 注册入口  -->
+					<div id="register">
+						<div class="reg">
+							<label for="usn">用 户 名:</label><input type="text" name="username" id="usn"/>
+						</div>
+						<span id="usnJudge"></span>
+						<div class="reg">
+							<label for="pwd1">设置密码:</label><input type="password" name="username" id="pwd1"/>
+						</div>
+						<span id="pwd1Judge"></span>
+						<div class="reg">
+							<label for="pwd2">确认密码:</label><input type="password" name="username" id="pwd2"/>
+						</div>
+						<span id="pwd2Judge"></span>
+						<div class="reg">
+							<label for="phone">手 机 号:</label><input type="text" name="username" id="phone"/>
+						</div>
+						<span id="phoneJudge"></span>
+						<div class="reg code">
+							<input type="text" id="verificationCode"/><a href="javascript:;">请 发 送 验 证 码 到 手 机</a>
+						</div>
+						<div class="agreement">
+							<input type="checkbox" id="checkbox" /><p>我 已 阅 读 并 接 受<a href="termsOfService.html" target="_blank">《理想家用户服务协议》</a></p>
+						</div>
+						<input type="submit" name="" id="register-register" value="立 即 注 册" />
+					</div>
+					
+				</div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="../bundle.js"></script>
+
+</html>

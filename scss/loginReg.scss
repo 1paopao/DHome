@@ -1,3 +1,9 @@
+#login-wrap{
+     width: 100%;
+     background: #000;
+     overflow: hidden;
+}
+
 #con{
     width: 1200px;
     margin: 68px auto;
@@ -102,7 +108,7 @@
                 .reg{
                     width: 100%;
                     overflow: hidden;
-                    margin-top: 20px;
+                    margin-top: 18px;
                     label{
                         float: left;
                         display: block;
@@ -169,7 +175,8 @@
                     background: #ff8e4f;
                     font-size: 18px;
                     color: #662600;
-                    margin: 8px 20px 0;
+                    margin: 5px 20px 0;
+                    border: 0;
                 }              
             }
             

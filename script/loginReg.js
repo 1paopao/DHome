@@ -94,6 +94,8 @@ export default{
 		})
 		
 		
+		//发送验证码
+		
 		
 	}
 	

@@ -95,7 +95,20 @@ export default{
 		
 		
 		//发送验证码
-		
+		var num = 30;
+		var timer;
+		$('#sendCode').on('click',function(){
+			clearInterval(timer);
+		    timer = setInterval(function(){
+				$('#sendCode').html(num+'s');
+				if(num<0){
+					clearInterval(timer);
+					$('#sendCode').html('重新发送验证码');
+					num = 30;
+				}
+				num--;
+			},1000);
+		})
 		
 	}
 	

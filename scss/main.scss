@@ -1,0 +1,204 @@
+@import 'reset.css';
+
+//中间公共部分
+@mixin middle {
+    width: 1206px;
+    margin: 0 auto;
+}
+
+//浮动
+@mixin fl {
+    float: left;
+}
+
+@mixin fr {
+    float: right;
+}
+
+//字体文件
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/companyfont/iconfont.eot');
+  src: url('../font/companyfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/companyfont/iconfont.woff') format('woff'),
+  url('../font/companyfont/iconfont.ttf') format('truetype'),
+  url('../font/companyfont/iconfont.svg#iconfont') format('svg');
+}
+
+
+//方块的颜色
+@mixin span-color($color:1){
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color:#fff;
+    @if $color == 1 {
+        background:#79cbc9 ;
+    } @else if $color == 2 {
+        background:#efa091 ;
+    } @else if $color == 3 {
+        background:#e0bf7a ;
+    } @else if $color == 4 {
+        background:#f7a768 ;
+    } @else if $color == 5 {
+        background:#8fd0a5 ;
+    } @else if $color == 6 {
+        background:#90b5c7 ;
+    } @else  {
+        background:#90b5c5 ;
+    }
+}
+
+
+
+
+//company
+body {
+    width:100%;
+    .company-top {     //位置
+        height:40px;
+        .company-location {
+            @include middle;
+            line-height: 40px;
+            i {
+                font-family: 'iconfont';
+                display: inline-block;
+                width: 35px;
+                height:35px;
+                font-style: normal;
+            }
+        }
+    }
+    
+    .company-nav {   //导航
+        height:63px;
+        background: #000;
+    }
+    
+    .company-cont {   //内容区
+        
+        .company-table {  //表格
+            @include middle;
+            margin-top: 12px;
+            margin-bottom: 45px;
+            border-collapse: collapse;
+            border-spacing:0;
+            .type {
+                width:92px;
+                text-align: center;
+            }
+            td {
+                border:1px solid #999;
+                padding:0 19px;
+                line-height: 30px;
+            }
+        }
+        
+        .recommend {  //更多
+             @include middle;
+             line-height: 34px;
+             border: 1px solid #999;
+             padding:0 15px;
+             box-sizing: border-box;
+             position: relative;
+             a {
+                 position: absolute;
+                 right: 20px;
+             }
+        }
+        
+        .recom-cont {   //公司列表
+            @include middle;
+            margin-top: 12px;
+            border: 1px solid #999;
+            padding:12px;
+            box-sizing: border-box;
+            overflow: hidden;
+            dt {
+                @include fl;
+                padding:18px;
+                box-sizing: border-box;
+                width: 120px;
+            }
+            dd {
+                @include fl;
+                .company-left {
+                    @include fl;
+                    width: 825px;
+                    border-right: 1px solid #999;
+                    p:nth-child(1) {
+                        font-size:22px;
+                        font-weight: 600;
+                        margin-top:10px;
+                        margin-bottom: 17px;
+                    }
+                    p:nth-child(2) {
+                        span:nth-of-type(1) {
+                            @include span-color(1);
+                        }
+                        span:nth-of-type(2) {
+                            @include span-color(2);
+                        }
+                        span:nth-of-type(3) {
+                            @include span-color(3);
+                        }
+                        span:nth-of-type(4) {
+                            @include span-color(4);
+                        }
+                        span:nth-of-type(5) {
+                            @include span-color(5);
+                        }
+                        span:nth-of-type(6) {
+                            @include span-color(6);
+                        }
+                        span:nth-of-type(7) {
+                            @include span-color(7);
+                        }
+                        
+                        strong {
+                            font-size: 14px;
+                            font-weight: 200;
+                        }
+                    }
+                    p:nth-child(3) {
+                        margin-top:15px;
+                        font-size: 14px;
+                        i {
+                            font-style: normal;
+                            font-family: iconfont;
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }                    
+                }
+                
+                .company-right {
+                    @include fl;
+                    width: 233px;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 14px;
+                    strong {
+                        display: block;
+                    }
+                    span {
+                        display: block;
+                        color:#ea9957;
+                    }
+                    button {
+                        padding:0 30px;
+                        font-size:18px;
+                        color:#fff;
+                        line-height:32px;
+                        background: #e16e13;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    
+}

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 module.exports = {
 	entry:"./app.js",//入口文件(与该文件同级目录)
 	output:{
@@ -49,7 +48,6 @@ module.exports = {
         ]
     }
 }
-=======
 module.exports = {
 	entry:"./app.js",//入口文件(与该文件同级目录)
 	output:{
@@ -99,4 +97,3 @@ module.exports = {
         ]
     }
 }
->>>>>>> a076e1f979c74707254ceba7b816336fd9371f07

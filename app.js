@@ -1,5 +1,3 @@
 /*main.css*/
-//import './scss/reset.css';
 import './scss/main.scss';
-
-
+import './scss/home.scss';

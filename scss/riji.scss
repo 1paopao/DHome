@@ -1,0 +1,132 @@
+section{
+    float: left;
+    width: 964px;
+    height: 200px;
+    .tits{
+        height: 32px;
+        margin-top: 34px;
+        border-bottom: 2px solid #c4c4c4;
+        color: #737373;
+       span{
+           float: left;
+           padding: 0 30px;
+           height: 32px;
+           line-height: 32px;
+           font-size: 18px;
+       }
+    }
+    .con{
+        padding: 30px 0;
+        overflow: hidden;
+        dl{
+            overflow: hidden;
+            border-bottom: 1px dashed #656565;
+            padding-top: 10px;
+            dt{
+                float: left;
+                width: 92px;
+                height: 92px;
+                margin-right: 15px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            dd{
+                float: left;
+                width: 809px;
+                p{
+                    width: 100%;
+                    overflow: hidden;
+                    line-height: 20px;
+                }
+                p:nth-of-type(1){
+                    line-height: 30px;
+                    span:first-child{
+                        float: left;
+                        font-size: 18px;
+                    }
+                    span:last-child{
+                        float: right;
+                        em{
+                            float: left;
+                            padding: 0 10px 0 40px;
+                            line-height: 30px;
+                            background: url(../imgs/riji.jpg)no-repeat 9px top;
+                            font-style: normal;
+                        }
+                        em:nth-of-type(2){
+                            background-position-y: -25px;
+                        }
+                        em:nth-of-type(3){
+                            background-position-y: -50px;
+                        }
+                    }
+                }
+                p:nth-of-type(2){
+                    em{
+                        font-style: normal;
+                        padding-right: 10px;
+                    }
+                }
+                p:nth-of-type(4){
+                    color: #a3a3a3;
+                    margin: 10px 0;
+                }
+            }
+        }
+        dl:last-child{
+            border-bottom: 0;
+        }
+    }
+}
+aside{
+    float: right;
+    width: 234px;
+    height: 300px;
+    h2{
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        padding-left:80px;
+        margin: 50px 0 13px 0;
+        background: #f27021 url(../imgs/write.jpg)no-repeat left top;
+    }
+    ul{
+        width: 200px;
+        padding:0px 13px  10px;
+        border: 1px solid #d1d1d1;
+        overflow: hidden;
+        margin: 0 auto;
+        li{
+            height: 79px;
+            border-bottom: 1px dashed #bdbdbd;
+            img{
+                float: left;
+                width: 50px;
+                height: 50px;
+                margin: 14px;
+                border-radius: 50%;
+            }
+            div{
+                float: left;
+                width: 111px;
+                margin-top: 8px;
+                color: #969696;
+                h3{
+                    line-height: 32px;
+                }
+            }
+        }
+        li:first-child{
+            line-height: 79px;
+            text-align: center;
+            font-size: 29px;
+            color: #747474;
+        }
+        li:last-child{
+            border-bottom: 0;
+        }
+    }
+}

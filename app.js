@@ -19,6 +19,14 @@ import './scss/fatie.scss';
 import LoginReg from './script/loginReg.js';
 LoginReg.login();
 LoginReg.loginyanzheng();
+
+if(sessionStorage.getItem('username')){
+	$('#log .change').html('<em>&#xe6cb;</em>'+'欢迎'+sessionStorage.getItem('username'));
+	$('#log .change').attr('href','view/fatie.html');
+	$('#log .change1').html('<em>&#xe6cb;</em>'+'欢迎'+sessionStorage.getItem('username'));
+	$('#log .change1').attr('href','fatie.html');
+}
+
 $('#log a').on('click',function(){
 	var i = $(this).index();
 	localStorage.setItem('num',i);

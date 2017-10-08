@@ -1,5 +1,8 @@
 const webpack = require('webpack');
+<<<<<<< HEAD
 //const HtmlWebpackPlugin = require('html-webpack-plugin');
+=======
+>>>>>>> 44a158933631a7ad731424edf6593c16e1e781ef
 var path = require('path');
 
 module.exports = {

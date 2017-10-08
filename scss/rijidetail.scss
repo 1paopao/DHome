@@ -1,0 +1,272 @@
+@import 'reset.css';
+
+//中间公共部分
+@mixin middle {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.diary-detail {
+    @include middle;
+    line-height:40px;
+    font-size: 14px;
+    color:#4c4c4c;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e5e5;
+    dl {
+        overflow: hidden;
+        dt,dd {
+            float:left;
+        }
+        dt {
+            position: relative;
+            span {
+               img{
+                   width:105px;
+                   height:105px;
+                   border-radius: 50%;
+               }
+            } 
+            strong {
+                position: absolute;
+                left: 40%;
+                top: 80%;
+            }
+        }
+        dd {
+            margin-left:50px;
+            .dd-left,.dd-right {
+                float: left;
+            }
+            .dd-left {
+                width:733px;
+                h2 {
+                    font-weight: 600;
+                }
+                p {
+                    color:#4c4c4c;
+                    line-height:30px;
+                }
+            }
+            .dd-right {
+                div {
+                    float: left;
+                    width:86px;
+                    border-right:1px solid #c2c2c2;
+                    text-align: center;
+                    cursor: pointer;
+                    em {
+                        font-size:18px;
+                        color: #eb6100;
+                        font-style: normal;
+                    }
+                    span {
+                         display: block;
+                         font-size: 16px;
+                         color: #4c4c4c;
+                         margin-top: -10px;
+                    }
+                }
+                div:nth-child(3) {
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+.diary-msg {
+    @include middle;
+    padding-left:77px;
+    box-sizing: border-box;
+    position: relative;
+    
+    .dia-msg {
+        width:1120px;
+        min-height: 600px;
+        height:auto!important;
+        height:600px;
+        overflow: hidden;
+        border-left:1px solid #e0e0e0;
+        border-bottom:1px solid #e0e0e0;
+        padding-bottom: 30px;
+
+        .dia-circle {
+            width:85px;
+            height: 85px;
+            border-radius:50%;
+            background-color:#f26f20;
+            font-size: 18px;
+            color: #FFFDEF;
+            text-align:center;
+            padding-top: 16px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 62px;
+            left: 34px;
+            z-index: 2;
+            span {
+                display: block;
+                width: 44px;
+                margin: 0px auto;
+            }
+        }
+        
+        .diamsg-right {
+            padding-left: 73px;
+            padding-top: 40px;
+            
+            .diat-text {
+                font-size: 16px;
+                color:#4c4c4c;
+                border-bottom: 1px solid #d9d9d9;
+                overflow: hidden;
+                padding-bottom: 15px;
+                position: relative;
+                p {
+                    line-height: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 25px;
+                }
+                span {
+                    span {
+                        float: left;
+                        em {
+                            float: left;
+                            font-style: normal;
+                            padding: 0 31px;
+                            height:30px;
+                            background: url(../imgs/riji.png) no-repeat left -55px;
+                            cursor: pointer;
+                        }
+                        em:nth-of-type(2) {
+                            background-position-y: -80px;
+                        }
+                    }
+                }
+                .jt {
+                    &:before,
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        position: relative;
+                    }
+                    &:before {
+                        top: 36px;
+                        left: 46px;
+                        border-bottom: 9px solid #d9d9d9;
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;  
+                    }
+                    &:after {
+                        top: 28px;
+                        left: 46px;
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;
+                        border-bottom: 9px solid #ffffff;
+                    }
+                }
+            }
+            
+            .leave-word {
+                width:100%;
+               
+                ul {
+                    width: 100%;
+                    padding: 10px 5px;
+                    border-bottom: 1px solid #e0e0e0;
+                    li {
+                        overflow: hidden;
+                        span,.lw {
+                            float: left;
+                        }
+                        span {
+                            img {
+                                display: block;
+                                width: 65px;
+                                height: 65px;
+                                border-radius: 50%;
+                            }
+                        }
+                        .lw {
+                                margin-left: 15px;
+                                p {
+                                    line-height: 30px;
+                                    font-size: 14px;
+                                    .dia-name {
+                                        color:orange;
+                                        cursor: pointer;
+                                    }
+                                }
+                        }
+                    }
+                    li:nth-child(2n) {
+                        margin-left: 20px;
+                        margin-top: 20px;
+                    }
+                }
+                
+                .dia-pl {
+                    margin-top: 36px;
+                    overflow: hidden;
+                    
+                    .toux {
+                        float: left;
+                        img {
+                            width: 92px;
+                            height: 92px;
+                            border-radius: 50%;
+                        }
+                    }
+                    
+                    .diap-cont {
+                        float: left;
+                        margin-left: 22px;
+                        
+                        textarea {
+                            width: 842px;
+                            height: 76px;
+                            min-height: 76px;
+                            height: auto!important;
+                            margin-top: 10px;
+                            text-indent: 10px;
+                            border: 1px solid orange;
+                            word-wrap: break-word;
+                            word-break: normal;
+                            resize: none;  /*去除右小角*/
+                            font-size: 14px;
+                            font-family: microsoft;
+                            padding-top: 10px;
+                            box-sizing: border-box;
+                               &:focus {
+                                   outline: 0;
+                               }
+                        }
+                        
+                        
+                        .send {
+                            text-align: right;
+                            margin-top: 18px;
+                            span {
+                                font-size: 14px;
+                                color: #4c4c4c;
+                            }
+                            button {
+                                border: 0;
+                                width: 68px;
+                                height: 24px;
+                                line-height: 24px;
+                                background: orange;
+                                color: #fff;
+                                margin-left: 10px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

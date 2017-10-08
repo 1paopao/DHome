@@ -211,8 +211,8 @@ $(function(){
 							</dd>
 						</dl>`;
 				imgs += `<li>
-								<img src="${res.user.user_icon}" />
-							</li>`;
+							<img src="${res.user.user_icon}" />
+						</li>`;
 			})
 			$('.share_info div').html(html);
 			$('.user_img ul').html(imgs);

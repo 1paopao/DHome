@@ -62,7 +62,11 @@ export default{
 						case 0:alert('用户名或者密码错误！！！！')
 							break;
 						case 1:
+<<<<<<< HEAD
 							location.href = 'fatie.html';
+=======
+							location.href = 'fatie.html';
+>>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
 							sessionStorage.setItem('username',$('#username').val().toString());
 							break;
 					}
@@ -131,8 +135,13 @@ export default{
 			}
 			console.log($('#usn').val().toString(),$('#pwd1').val().toString(),$('#pwd2').val().toString(),$('#phone').val().toString(),$('#verificationCode').val().toString());
 			$.ajax({
+<<<<<<< HEAD
 				type:"post",
 				url:"http://www.drehome.com/dreamhome/user",
+=======
+				type:"get",
+				url:"http://www.drehome.com/dreamhome/adduser",
+>>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
 				data:{'user_name':$('#usn').val().toString(),'user_password':$('#pwd1').val().toString(),'repassword':$('#pwd2').val().toString(),'user_phone':$('#phone').val().toString(),'yanzhen':$('#verificationCode').val().toString()},
 				success:function(data) {
 					console.log(data);
@@ -167,7 +176,11 @@ export default{
 		var timer;
 		$('#sendCode').on('click',function(){
 			$.ajax({
+<<<<<<< HEAD
 				type:"post",
+=======
+				type:"get",
+>>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
 				data:{'user_phone':$('#phone').val().toString()},
 				url:"http://www.drehome.com/dreamhome/phone",
 				success:function(data) {

@@ -15,6 +15,7 @@ import './scss/loginReg.scss';
 import './scss/termsOfService.scss';
 import './scss/decorationRaiders.scss';
 import './scss/riji.scss';
+
 import './scss/fatie.scss';
 import LoginReg from './script/loginReg.js';
 LoginReg.login();

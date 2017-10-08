@@ -1,0 +1,168 @@
+#decRai-banner{
+    width: 100%;
+    overflow: hidden;
+    .swiper-container{
+       .decRai-top{
+           width: 100%;
+           position: absolute;
+           height: 52px;
+           bottom: 0;
+           background:black;
+           z-index: 10;
+           opacity:0.5;
+           
+       } 
+       .swiper-pagination{
+          text-align: center;
+          color: #fff;
+          font-size: 20px;
+          opacity:1;
+          z-index: 11;
+          .swiper-pagination-current{
+              color: #ff5a00;
+          }
+       }
+       #left{
+           
+       }
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    height: 420px;
+} 
+#decRai-con{
+    width: 1200px;
+    margin: 13px auto 0;
+    overflow: hidden;
+    .decRai-top{
+        width: 100%;
+        height: 150px;
+        .decRai-slide{
+            width: 290px;
+            height: 150px;
+            position: relative;
+            strong{
+                position: absolute;
+                top: 40px;
+                left: 100px;
+                font-size: 40px;
+                color: #fff;
+                font-weight: 100;
+                
+            }
+        }
+    }
+//  table{
+//     margin: 20px auto; 
+//     border: 1px solid #e0e0e0;
+//     font-size: 14px;
+//     tr{
+//         border: 1px solid #e0e0e0;
+//         td{
+//             border: 1px solid #e0e0e0;
+//             color: #737373;
+//              span{
+//                  color: #737373;
+//                  margin-left: 10px;
+//              }
+//         }
+//         .decRaitd{
+//             text-align: center;
+//         }
+//     }
+//     
+//  }
+    #decRai-recommend{
+        width: 1198px;
+        margin-top: 40px;
+        border: 1px solid #c4c4c4;
+        overflow: hidden;
+        h1{
+            float: left;
+            height: 38px;
+            width: 100px;
+            font-size: 18px;
+            line-height: 38px;
+            margin-left: 15px;
+            font-weight: 100;
+            color: #737373;
+        }
+        .decRai-paging{
+            width: 100px;
+            height: 38px;
+            line-height: 38px;
+            float: right;
+            font-size: 14px;
+            
+            span{
+                color: #737373;
+                
+            }
+        }
+    }
+    #decRai-pic{
+        width: 100%;
+        overflow: hidden;
+        ul{
+            width: 100%;
+            overflow: hidden;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li{
+                position: relative;
+                float: left;
+                margin-bottom: 20px;
+                width: 284px;
+                height: 189px;
+                img{
+                    width: 284px;
+                    height: 189px; 
+                }
+                p{
+                    display: none;
+                    width: 100%;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    font-size: 12px;
+                    #dp-left{
+                        display: block;
+                        width: 63px;
+                        float: left;
+                        height: 20px;
+                        line-height: 20px;
+                        text-indent: 24px;
+                        background: black;
+                        opacity: 0.3;
+                        color: #fff;
+                        
+                    }
+                    #dp-right{
+                        display: block;
+                        width: 200px;
+                        float: right;
+                        height: 20px;
+                        line-height: 20px;
+                        text-align: center;
+                        background: red;
+                        opacity: 0.3;
+                        color: #fff;
+       
+                    }
+                    
+                }
+                
+                
+            }
+            li:hover p{
+                display: block;
+            }
+        }
+    }
+    
+} 

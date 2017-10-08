@@ -67,6 +67,9 @@ body {
    
     
     .company-cont {   //内容区
+            min-height: 500px;
+            height: auto!important;
+            overflow: hidden;
         
         .company-table {  //表格
             @include middle;
@@ -105,11 +108,19 @@ body {
             padding:12px;
             box-sizing: border-box;
             overflow: hidden;
+            
+            a {
+                float: left;
+            }
             dt {
                 @include fl;
                 padding:18px;
                 box-sizing: border-box;
                 width: 120px;
+                img {
+                    width: 95px;
+                    height: 95px;
+                }
             }
             dd {
                 @include fl;

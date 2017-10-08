@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
@@ -52,12 +52,12 @@ module.exports = {
 			}
 
 		]
-	},
-	plugins: [
-		new webpack.ProvidePlugin({
-			$: "jquery",
-			jQuery: "jquery"
-		}),
-	]
+	}
+//	plugins: [
+//		new webpack.ProvidePlugin({
+//			$: "jquery",
+//			jQuery: "jquery"
+//		}),
+//	]
 
 }

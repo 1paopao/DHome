@@ -138,9 +138,10 @@ header{
     }
 }
 #content{
-    min-height: 400px;
+    min-height: 600px;
     height: auto!important;
-    height: 400px;
+    height: 600px;
+    margin-bottom: 20px;
     overflow: hidden;
     .tit{
         width: 308px;
@@ -246,6 +247,10 @@ header{
                         color: #fff;
                     }
                 }
+                img{
+                    width: 323px;
+                    height:197px;
+                }
             }
             li:hover{
                 box-shadow:0px 5px 15px #666;
@@ -274,6 +279,7 @@ header{
                 padding: 18px 10px 0 13px;
                 margin-top: 16px;
                 background: rgba(191,191,191,.8);
+                overflow: hidden;
                 dl dt{
                     float: left;
                     width: 95px;

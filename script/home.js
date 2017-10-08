@@ -158,9 +158,72 @@ $(function(){
 				break;
 		}
 	}
+	//首页公司展示
+	$.ajax({
+		type:"get",
+		url:"http://www.drehome.com/dreamhome/companymain",
+		success:function(data){
+			var arr = data.data;
+			console.log(arr);
+			var 
+				html = "",
+				id = "";
+			arr.map(function(res){
+				html += `<li>
+							<img src="${res.company_pic}" />
+							<div>
+								<p>${res.company_name}</p>
+								<a href="#">立即咨询</a>
+							</div>
+						</li>`;
+				id = res.company_id;
+			})
+			$('.fitup ul').html(html);
+			$('.fitup ul').on('click','li',function(){
+				console.log($(this).index())
+//				localStorage.setItem()
+//				location.href = '../view/compdetail.html?id';
+			})
+		}
+	});
 	
-	//分享展示
-	$('.user_img ul li').click(function(){
-		$(this).addClass('active').siblings().removeClass('active');
-	})
+	//首页分享展示
+	$.ajax({
+		type:"get",
+		url:"http://www.drehome.com/dreamhome/talkmain",
+		success:function(data){
+			var arr = data.data;
+//			console.log(arr);
+			var 
+				html = "",
+				imgs = "";
+			arr.map(function(res,i){
+//				console.log(res)
+				html += `<dl>
+							<dt><img src="${res.user.user_icon}"/></dt>
+							<dd>
+								<h2>${res.talk_title}</h2>
+								<p>
+									<span class="type">${res.case.case_style}</span>
+									<span class="company">${res.company.company_name}</span>
+								</p>
+								<p>${res.talk_content}</p>
+							</dd>
+						</dl>`;
+				imgs += `<li>
+								<img src="${res.user.user_icon}" />
+							</li>`;
+			})
+			$('.share_info div').html(html);
+			$('.user_img ul').html(imgs);
+				//分享展示
+			$('.user_img ul li').eq(0).addClass('active');
+			
+			$('.user_img ul').on('click','li',function(){
+				var i = $(this).index();
+				$(this).addClass('active').siblings().removeClass('active');
+			    $('.share_info div dl').eq(i).fadeIn(400).siblings().fadeOut(400);
+			})
+		}
+	});
 })

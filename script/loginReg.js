@@ -58,12 +58,12 @@ export default{
 				sunccess:function(data) {
 					console.log(111)
 					console.log(data);
-					switch (){
+					/*switch (){
 						case value:
 							break;
 						default:
 							break;
-					}
+					}*/
 				}
 			
 			});

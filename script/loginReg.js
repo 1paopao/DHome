@@ -1,6 +1,22 @@
-export default{
-	
+export default{	
 	login:function(){
+		if(localStorage.getItem('num')){
+			var n = localStorage.getItem('num');
+			switch (n){
+					case '0': {
+						//$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
+						$('#login').css('display','block');
+						$('#register').css('display','none');
+					};
+						break;
+					case '1': {
+						//$('#loginTitlt1').addClass('login-active').siblings().removeClass('login-active');		
+						$('#login').css('display','none');
+						$('#register').css('display','block');
+					}
+						break;
+				}
+		}
 		//登录样式显现与影藏
 		$('#login-tunp a').on('click',function(){
 			var i = $(this).index();
@@ -34,26 +50,49 @@ export default{
 			}else{
 				$('#password-judge').html('');
 			}
+			$.ajax({
+				type:"get",
+				data:{'user_phone':$('#username').val().toString(),'user_password':$('#password').val().toString()},
+				url:"http://www.drehome.com/dreamhome/user",
+				async:true,
+				sunccess:function(data) {
+					console.log(111)
+					console.log(data);
+					switch (){
+						case value:
+							break;
+						default:
+							break;
+					}
+				}
+			
+			});
+			
 			return false;
 		})
 		
 		
 		//注册验证
 		$('#register-register').on('click',function(){
+			console.log(111)
 			var phon = /^1[34578]\d{9}$/;
-			if($('#usn').val().toString().trim()===''){
-				$('#usnJudge').html('请输入用户名');
+			var use = /^[a-zA-Z0-9_-]{3,6}$/;
+			var pas = /^[a-zA-Z0-9_-]{6,16}$/
+			if(use.test($('#usn').val().toString().trim())===false){
+				$('#usnJudge').html('请输入用户名，用户名为3-6位');
 				return false;
 			}else{
 				$('#usnJudge').html('');
 			}
-			if($('#pwd1').val().toString().trim()===''){
-				$('#pwd1Judge').html('请输入密码');
+			
+			
+			if(pas.test($('#pwd1').val().toString().trim())==false){
+				$('#pwd1Judge').html('请输入密码,密码为6-16位');
 				return false;
 			}else{
 				$('#pwd1Judge').html('');
 			}
-			if($('#pwd2').val().toString().trim()===''){
+			if(pas.test($('#pwd2').val().toString().trim())==false){
 				$('#pwd2Judge').html('请输入密码');
 				return false;
 			}else{
@@ -89,15 +128,41 @@ export default{
 				alert('你还未同意用户协议');
 				return false;
 			}
-			alert('chenggong ')
+			console.log($('#usn').val(),$('#pwd1').val().toString(),$('#pwd2').val().toString(),$('#phone').val().toString(),$('#verificationCode').val().toString());
+			$.ajax({
+				type:"post",
+				data:{'name':$('#usn').val(),'password':$('#pwd1').val().toString(),'repassword':$('#pwd2').val().toString(),'user_phone':$('#phone').val().toString(),'yanzhen':$('#verificationCode').val().toString()},
+				url:"http://www.drehome.com/dreamhome/user",
+				async:true,
+				sunccess:function(data) {
+					console.log(222)
+					console.log(data);
+				}
+			
+			});
 			return false;
 		})
 		
 		
+		
+		
+	},
+	
+	loginyanzheng:function(){
 		//发送验证码
 		var num = 30;
 		var timer;
 		$('#sendCode').on('click',function(){
+			console.log($('#phone').val().toString())
+			$.ajax({
+				type:"get",
+				data:{'user_phone':'18037472603'},
+				url:"http://www.drehome.com/dreamhome/phone",
+				async:true,
+				sunccess:function(data) {
+					console.log(data);
+				}
+			});
 			clearInterval(timer);
 		    timer = setInterval(function(){
 				$('#sendCode').html(num+'s');
@@ -108,10 +173,12 @@ export default{
 				}
 				num--;
 			},1000);
+			
+			
+			
 		})
 		
 	}
 	
 	
-	
-}
+};

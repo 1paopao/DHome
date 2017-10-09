@@ -22,6 +22,7 @@ section{
             overflow: hidden;
             border-bottom: 1px dashed #656565;
             padding-top: 10px;
+            cursor: pointer;
             dt{
                 float: left;
                 width: 92px;
@@ -70,6 +71,12 @@ section{
                         padding-right: 10px;
                     }
                 }
+                p:nth-of-type(3){
+                    .look-detail{
+                        color: red;
+                        font-style: normal;
+                    }
+                }
                 p:nth-of-type(4){
                     color: #a3a3a3;
                     margin: 10px 0;
@@ -88,10 +95,12 @@ aside{
     h2{
         height: 40px;
         line-height: 40px;
-        color: #fff;
         padding-left:80px;
         margin: 50px 0 13px 0;
         background: #f27021 url(../imgs/write.jpg)no-repeat left top;
+        a{
+            color: #fff;
+        }
     }
     ul{
         width: 200px;

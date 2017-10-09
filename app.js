@@ -9,7 +9,7 @@ Complist.init();
 /*公司详情*/
 import Compdetail from './script/compdetail.js';
 Compdetail.init();
-
+Compdetail.detail();
 import './scss/home.scss';
 import './scss/loginReg.scss';
 import './scss/termsOfService.scss';

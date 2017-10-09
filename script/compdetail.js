@@ -8,6 +8,23 @@ export default {
 			arr  = [],
 			obj  = {};
 		//获取数据
+<<<<<<< HEAD
+	},
+	
+	
+	detail:function(){
+		//id
+		var urls = location.href.split('=')[1];
+//		console.log(urls)
+		
+//		$.ajax({
+//			type:"get",
+//			url:"http://www.drehome.com/dreamhome/talkmain",
+//			success:function(data){
+//				console.log(data)
+//			}
+//		});
+=======
 		$.get(surl,function(data){
 			var 
 				oData = data.data;
@@ -21,5 +38,7 @@ export default {
 				}
 				
 		})
+>>>>>>> 83a913ac8e2b32d5f482eb33cd7cea0fefad930a
 	}
 }
+

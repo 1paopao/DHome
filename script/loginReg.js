@@ -4,13 +4,14 @@ export default{
 			var n = localStorage.getItem('num');
 			switch (n){
 					case '0': {
-						//$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
-						$('#login').css('display','block');
-						$('#register').css('display','none');
+							$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
+							$('#login').css('display','block');
+							$('#register').css('display','none');
+							$('#log .change').attr('src','view/loginReg.html');
 					};
 						break;
 					case '1': {
-						//$('#loginTitlt1').addClass('login-active').siblings().removeClass('login-active');		
+						$('#loginTitlt1').addClass('login-active').siblings().removeClass('login-active');		
 						$('#login').css('display','none');
 						$('#register').css('display','block');
 					}
@@ -55,15 +56,20 @@ export default{
 				data:{'user_phone':$('#username').val().toString(),'user_password':$('#password').val().toString()},
 				url:"http://www.drehome.com/dreamhome/user",
 				async:true,
-				sunccess:function(data) {
-					console.log(111)
+				success:function(data) {
 					console.log(data);
-					/*switch (){
-						case value:
+					switch (data.code){
+						case 0:alert('用户名或者密码错误！！！！')
 							break;
-						default:
+						case 1:
+<<<<<<< HEAD
+							location.href = 'fatie.html';
+=======
+							location.href = 'fatie.html';
+>>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
+							sessionStorage.setItem('username',$('#username').val().toString());
 							break;
-					}*/
+					}
 				}
 			
 			});
@@ -74,10 +80,9 @@ export default{
 		
 		//注册验证
 		$('#register-register').on('click',function(){
-			console.log(111)
 			var phon = /^1[34578]\d{9}$/;
 			var use = /^[a-zA-Z0-9_-]{3,6}$/;
-			var pas = /^[a-zA-Z0-9_-]{6,16}$/
+			var pas = /^[a-zA-Z0-9_-]{6,16}$/;
 			if(use.test($('#usn').val().toString().trim())===false){
 				$('#usnJudge').html('请输入用户名，用户名为3-6位');
 				return false;
@@ -128,15 +133,32 @@ export default{
 				alert('你还未同意用户协议');
 				return false;
 			}
-			console.log($('#usn').val(),$('#pwd1').val().toString(),$('#pwd2').val().toString(),$('#phone').val().toString(),$('#verificationCode').val().toString());
+			console.log($('#usn').val().toString(),$('#pwd1').val().toString(),$('#pwd2').val().toString(),$('#phone').val().toString(),$('#verificationCode').val().toString());
 			$.ajax({
+<<<<<<< HEAD
 				type:"post",
-				data:{'name':$('#usn').val(),'password':$('#pwd1').val().toString(),'repassword':$('#pwd2').val().toString(),'user_phone':$('#phone').val().toString(),'yanzhen':$('#verificationCode').val().toString()},
 				url:"http://www.drehome.com/dreamhome/user",
-				async:true,
-				sunccess:function(data) {
-					console.log(222)
+=======
+				type:"get",
+				url:"http://www.drehome.com/dreamhome/adduser",
+>>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
+				data:{'user_name':$('#usn').val().toString(),'user_password':$('#pwd1').val().toString(),'repassword':$('#pwd2').val().toString(),'user_phone':$('#phone').val().toString(),'yanzhen':$('#verificationCode').val().toString()},
+				success:function(data) {
 					console.log(data);
+					/*switch (data.code){
+						case 10:alert('你输入的手机号不一致');
+							break;
+						case 20:alert('你输入的验证码不一致');
+							break;
+						case 30:$('#pwd2Judge').html('您输入的两次密码不一致');
+							break;
+						case 40:alert('数据输入不合法')
+							break;
+						case 50:alert('注册失败，数据已经存在')
+							break;
+						case 1:alert('注册成功')
+							break;
+					}*/
 				}
 			
 			});
@@ -153,13 +175,15 @@ export default{
 		var num = 30;
 		var timer;
 		$('#sendCode').on('click',function(){
-			console.log($('#phone').val().toString())
 			$.ajax({
+<<<<<<< HEAD
+				type:"post",
+=======
 				type:"get",
-				data:{'user_phone':'18037472603'},
+>>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
+				data:{'user_phone':$('#phone').val().toString()},
 				url:"http://www.drehome.com/dreamhome/phone",
-				async:true,
-				sunccess:function(data) {
+				success:function(data) {
 					console.log(data);
 				}
 			});
@@ -173,7 +197,6 @@ export default{
 				}
 				num--;
 			},1000);
-			
 			
 			
 		})

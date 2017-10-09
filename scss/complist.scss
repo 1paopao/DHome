@@ -105,13 +105,21 @@ body {
             @include middle;
             margin-top: 12px;
             border: 1px solid #999;
-            padding:12px;
+            padding:0 12px;
             box-sizing: border-box;
             overflow: hidden;
+            margin-bottom: 55px;
             
             a {
                 float: left;
+                padding: 12px 0;
+                border-bottom: 1px dashed #999;
+                &:nth-last-child(1) {
+                    border:0;
+                }
             }
+           
+                        
             dt {
                 @include fl;
                 padding:18px;
@@ -128,6 +136,7 @@ body {
                     @include fl;
                     width: 825px;
                     border-right: 1px solid #999;
+                    margin-top: 10px;
                     p:nth-child(1) {
                         font-size:22px;
                         font-weight: 600;
@@ -181,6 +190,7 @@ body {
                     text-align: center;
                     line-height: 20px;
                     font-size: 14px;
+                    margin-top: 25px;
                     strong {
                         display: block;
                     }

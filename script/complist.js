@@ -39,7 +39,6 @@ export default {
 											<span>1388</span>
 											<strong>好评率</strong>
 											<span>99.57%</span>
-											<button>免费预约</button>
 										</div>
 									</dd>
 								</dl>

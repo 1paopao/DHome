@@ -21,22 +21,7 @@ export default {
 				}
 				
 		})
-	},
-	
-	
-	detail:function(){
-		//id
-		var urls = location.href.split('=')[1];
-//		console.log(urls)
-		
-//		$.ajax({
-//			type:"get",
-//			url:"http://www.drehome.com/dreamhome/talkmain",
-//			success:function(data){
-//				console.log(data)
-//			}
-//		});
-		
 	}
+	
 }
 

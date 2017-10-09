@@ -9,7 +9,12 @@ Complist.init();
 /*公司详情*/
 import Compdetail from './script/compdetail.js';
 Compdetail.init();
-Compdetail.detail();
+/*显示日记的列表*/
+import Showriji from './script/showriji.js';
+Showriji.init();
+Showriji.write();
+Showriji.showDairy();
+
 import './scss/home.scss';
 import './scss/loginReg.scss';
 import './scss/termsOfService.scss';

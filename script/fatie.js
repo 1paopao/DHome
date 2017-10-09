@@ -1,6 +1,5 @@
 $(function(){
 	$('.tabs').each(function(i){
-		console.log(i);
 		$(this).click(function(){
 			$(this).parent().css("border-color","red").siblings().css("border-color","#c9c9c9");
 			switch (i){

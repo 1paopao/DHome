@@ -1,63 +1,91 @@
 $(function(){
 	//图片轮播
-	var 
-		banner    = $('#banner'),
-		direction = $('#direction'),
-		oLists    = $('#banner ul'),
-		aLi       = oLists.find('li'),
-		leftArrow = $("#left-arrow"),
-		rightArrow= $("#right-arrow"),
-		timer     = null;
+	$.ajax({
+		type:"get",
+		url:"http://www.drehome.com/dreamhome/banner",
+		success:function(data){
+			var arr = data.data;
+//			console.log(arr);
+			var html = "";
+			arr.map(function(res){
+				html += `<li><img src="${res.banner_pic}" /></li>`;
+			})
+			$('#banner ul').html(html);
+			var 
+				banner    = $('#banner'),
+				direction = $('#direction'),
+				oLists    = $('#banner ul'),
+				aLi       = oLists.find('li'),
+				leftArrow = $("#left-arrow"),
+				rightArrow= $("#right-arrow"),
+				timer     = null;
+				
+				banner.on('mouseenter',function(){
+					clearInterval(timer);
+					direction.css('display','block');
+				})
+				banner.on('mouseleave',function(){
+					timer = setInterval(function(){
+						move();
+					},3000);
+					direction.css('display','none');
+				})
+				//克隆第一张，追加到ul的后面
+				aLi.eq(0).clone(true).appendTo(oLists);
+				//设置ul的宽度
+				var preWidth = aLi.eq(0).width();//取得单个li的宽度
+				oLists.width((aLi.length + 1) * preWidth);
+				
+				var  i = 0;
 		
-		banner.on('mouseenter',function(){
-			clearInterval(timer);
-			direction.css('display','block');
-		})
-		banner.on('mouseleave',function(){
-			timer = setInterval(function(){
+				
+				timer = setInterval(function(){
+					move();
+				},3000);
+				
+				function move(){
+					//向右滑动
+					i++;
+					if(i == aLi.length+1){
+						i = 1;
+						oLists.css("left",0);
+					}
+					//向左滑动
+					
+					if(i == -1){
+						i = aLi.length - 1;
+						oLists.css("left",-aLi.length * preWidth);
+					}
+					//计算left值
+					oLists.stop().animate({"left": -i * preWidth},500);
+		//			console.log(-i * preWidth)
+				}
+			rightArrow.click(function(){
 				move();
-			},3000);
-			direction.css('display','none');
-		})
-		//克隆第一张，追加到ul的后面
-		aLi.eq(0).clone(true).appendTo(oLists);
-		//设置ul的宽度
-		var preWidth = aLi.eq(0).width();//取得单个li的宽度
-		oLists.width((aLi.length + 1) * preWidth);
-		
-		var  i = 0;
-
-		
-		timer = setInterval(function(){
-			move();
-		},3000);
-		
-		function move(){
-			//向右滑动
-			i++;
-			if(i == aLi.length+1){
-				i = 1;
-				oLists.css("left",0);
-			}
-			//向左滑动
-			
-			if(i == -1){
-				i = aLi.length - 1;
-				oLists.css("left",-aLi.length * preWidth);
-			}
-			//计算left值
-			oLists.stop().animate({"left": -i * preWidth},500);
-//			console.log(-i * preWidth)
+			})
+			leftArrow.click(function(){
+				move();
+			})
 		}
-	rightArrow.click(function(){
-		move();
-	})
-	leftArrow.click(function(){
-		move();
-	})
+	});
+	
 	
 	//根据鼠标进入方向出现遮罩层
-	$(".psd ul li").hover(function(e) {
+	$.ajax({
+		type:"get",
+		url:"http://www.drehome.com/dreamhome/casemain",
+		success:function(data){
+			var arr = data.data;
+//			console.log(arr);
+			var html = "";
+			arr.map(function(res){
+				html += `<li>
+							<img src="${res.case_pic}" />
+							<span class="hovers">${res.case_style}</span>
+						</li>`;
+			})
+			$('.psd ul').html(html);
+			$(".psd ul li").hover(function(e) {
 		var e = e || event;
 		moveTo.call(this, e, true);
 	}, function(e) {
@@ -66,7 +94,6 @@ $(function(){
 	});
 	
 	function moveTo(e,bool) {
-//		console.log(e.bool);
 		let top = $(this).offset().top,
 			bottom = top + $(this).height(),
 			left = $(this).offset().left,
@@ -82,8 +109,6 @@ $(function(){
 			sL = Math.abs(x - left);
 			sR = Math.abs(x - right);
 			a = Math.min(sT, sB, sL, sR);
-			
-			
 			
 		switch(a) {
 			case sT:
@@ -158,31 +183,34 @@ $(function(){
 				break;
 		}
 	}
+		}
+	});
+	
 	//首页公司展示
 	$.ajax({
 		type:"get",
 		url:"http://www.drehome.com/dreamhome/companymain",
 		success:function(data){
 			var arr = data.data;
-			console.log(arr);
+//			console.log(arr);
 			var 
 				html = "",
-				id = "";
+				id = [];
 			arr.map(function(res){
 				html += `<li>
 							<img src="${res.company_pic}" />
 							<div>
 								<p>${res.company_name}</p>
-								<a href="#">立即咨询</a>
 							</div>
 						</li>`;
-				id = res.company_id;
+				id.push(res.company_id);
 			})
 			$('.fitup ul').html(html);
+//			console.log(id)
 			$('.fitup ul').on('click','li',function(){
-				console.log($(this).index())
+				var i = $(this).index();
 //				localStorage.setItem()
-//				location.href = '../view/compdetail.html?id';
+				location.href = '../view/compdetail.html?id='+id[i];
 			})
 		}
 	});

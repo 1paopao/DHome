@@ -1,4 +1,5 @@
 .fatie{
+    overflow: hidden;
     .top{
        float: left;
        width: 100%;
@@ -27,7 +28,10 @@
     }
     aside{
         width: 277px;
-        height: 187px;
+        min-height: 200px;
+        height: auto!important;
+        height: 200px;
+        overflow: hidden;
         margin-right: 67px;
         h3{
             height: 32px;
@@ -40,21 +44,33 @@
 //          color: #f27427;
 //      }
         .infos{
-            padding: 5px;
-//          h3{
-//              color: #f27427;
-//          }
+            border: 1px solid red;
+            .progress{
+                width:99%;
+                height: 4px;
+                margin:0 auto;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                .progress-bar{
+                    width: 50%;
+                    height: 4px;
+                    background: orange;
+                }
+            }
         }
-        .infos,.diarynum{
+        .infos,.diarynum,.collect{
+            float: left;
+            padding: 5px; 
+            width: 96%;
             line-height: 32px;
             text-align: center;
-            border: 1px solid #c9c9c9;
             color: #7e7e7e;
             margin-bottom: 20px;
         }
         .diarynum{
             padding: 5px;
             overflow: hidden;
+            border: 1px solid #c9c9c9;
             .rijicon{
                 padding: 5px 10px;
                 border-bottom:1px solid #ccc ;
@@ -111,11 +127,15 @@
                 border-bottom: 0;
             }
         }
-        .progress{
-            height: 4px;
-            margin:0 5px;
-            .progress-bar{
-                background: orange;
+        .collect{
+            border: 1px solid #c9c9c9;
+            p{
+                line-height: 40px;
+                em{
+                    font-style: normal;
+                    padding:0 5px 0 40px;
+                    background:url(../imgs/riji.jpg)no-repeat 10px -32px;
+                }
             }
         }
     }
@@ -225,6 +245,236 @@
                 font-size: 20px;
                 color: #fff;
             }
+       }
+       .collection{
+           float: left;
+           padding: 0 10px;
+           display: none;
+           border: 1px solid #adadad;
+           dl{
+            overflow: hidden;
+            border-bottom: 1px dashed #656565;
+            padding-top: 10px;
+            cursor: pointer;
+            dt{
+                float: left;
+                width: 92px;
+                height: 92px;
+                margin-right: 15px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            dd{
+                float: left;
+                width: 720px;
+                p{
+                    width: 100%;
+                    overflow: hidden;
+                    line-height: 20px;
+                }
+                p:nth-of-type(1){
+                    line-height: 30px;
+                    span:first-child{
+                        float: left;
+                        font-size: 18px;
+                    }
+                    span:last-child{
+                        float: right;
+                        em{
+                            float: left;
+                            padding: 0 10px 0 40px;
+                            line-height: 30px;
+                            background: url(../imgs/riji.jpg)no-repeat 9px top;
+                            font-style: normal;
+                        }
+                        em:nth-of-type(2){
+                            background-position-y: -25px;
+                        }
+                        em:nth-of-type(3){
+                            background-position-y: -50px;
+                        }
+                    }
+                }
+                p:nth-of-type(2){
+                    em{
+                        font-style: normal;
+                        padding-right: 10px;
+                    }
+                }
+                p:nth-of-type(3){
+                    em{
+                        font-style: normal;
+                        color: blue;
+                    }
+                }
+                p:nth-of-type(4){
+                    color: #a3a3a3;
+                    margin: 10px 0;
+                }
+            }
+        }
+        dl:last-child{
+            border-bottom: 0;
+        }
+       }
+       .collection_detail{
+           float: left;
+           padding: 10px 8px 30px;
+           border: 1px solid #ccc;
+           display: none;
+           .detail-top{
+               float: left;
+               width: 100%;
+               padding-bottom: 10px;
+               border-bottom: 1px solid #ccc;
+               dl{
+                   width: 100%;
+                   overflow: hidden;
+                   dt{
+                       float: left;
+                       width: 105px;
+                       height: 128px;
+                       text-align: center;
+                       margin-right: 15px;
+                       img{
+                           width:100%;
+                           height: 105px;
+                           border-radius: 50%;
+                           margin-bottom: 6px;
+                       }
+                       strong{
+                           font-size: 14px;
+                       }
+                   }
+                   dd{
+                       float: left;
+                       width: 713px;
+                       .dd-left{
+                          float: left;
+                          width: 486px;
+                          h2{
+                              border-bottom: 0;
+                              height: 26px;
+                              line-height: 26px;
+                              margin-bottom: 0;
+                              color: #000;
+                          }
+                          p{
+                              line-height: 26px;
+                              font-size: 14px;
+                          }
+                       }
+                       .dd-right{
+                           float: right;
+                           width: 225px;
+                           display: flex;
+                           justify-content: space-around;
+                          div{
+                                padding:5px;
+                                text-align: center;
+                                font-size: 18px;
+                                em{
+                                   display: block;
+                                   font-style:normal;
+                                   color: #eb6100;
+                                }
+                          }
+                       }
+                   }
+               }
+           }
+           .detail-bottom{
+               position: relative;
+               float: left;
+               width: 84%;
+               padding:20px 0 20px 70px;
+               margin-left:70px;
+               border-left: 1px solid #ccc;
+               border-bottom: 1px solid #ccc;
+              .circle{
+                   position: absolute;
+                   left: -42px;
+                   top: 50%;
+                   width: 84px;
+                   height: 84px;
+                   background: orange;
+                   border-radius: 50%;
+                   text-align: center;
+                   margin-top: -42px;
+                   text-align: center;
+                   span{
+                       display: block;
+                       width: 40px;
+                       font-size: 18px;
+                       color: #fff;
+                       margin: 14px auto;
+                   }
+               }
+               .msg-right{
+                   line-height: 26px;
+                   font-size: 14px;
+                   .text{
+                       width: 99%;
+                        border-bottom: 1px solid #d9d9d9;
+                        margin-bottom: 10px;
+                       span:nth-of-type(2){
+                           em{
+                               padding-left: 44px;
+                               font-style: normal;
+                               background: url(../imgs/riji.png)no-repeat 10px -56px;
+                           }
+                           em:last-child{
+                               background-position-y: -80px;
+                           }
+                       }
+                       .jt {
+                            &:before,
+                            &:after {
+                                content: '';
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                position: relative;
+                            }
+                            &:before {
+                                top: 8px;
+                                left: 46px;
+                                border-bottom: 7px solid #d9d9d9;
+                                border-left: 7px solid transparent;
+                                border-right: 7px solid transparent;  
+                            }
+                            &:after {
+                                top: 10px;
+                                left: 46px; 
+                                border-left: 7px solid transparent;
+                                border-right: 7px solid transparent;
+                                border-bottom: 7px solid #ffffff;
+                            }
+                        }
+                   }
+                   .leave-words{
+                       ul li{
+                           img{
+                               float: left;
+                               width: 66px;
+                               height: 66px;
+                               border-radius: 50%;
+                               margin-right: 10px;
+                           }
+                           .lw{
+                               p:first-child{
+                                   span:first-child{
+                                       color: #f6a27d;
+                                   }
+                               }
+                           }
+                       }
+                   }
+               }
+           }
        }
     }
 }

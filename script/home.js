@@ -85,13 +85,17 @@ $(function(){
 						</li>`;
 			})
 			$('.psd ul').html(html);
+			//跳转详情页
+			$('.psd ul').on('click','li',function(){
+				
+			})
 			$(".psd ul li").hover(function(e) {
-		var e = e || event;
-		moveTo.call(this, e, true);
-	}, function(e) {
-		var e = e || event;
-		moveTo.call(this, e, false);
-	});
+				var e = e || event;
+				moveTo.call(this, e, true);
+			}, function(e) {
+				var e = e || event;
+				moveTo.call(this, e, false);
+			});
 	
 	function moveTo(e,bool) {
 		let top = $(this).offset().top,

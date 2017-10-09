@@ -211,7 +211,7 @@ header{
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0,0,0,.5);
+                    background: rgba(0,0,0,.4);
                     color: #fff;
                     font-size: 18px;
 //                  overflow: hidden;
@@ -354,4 +354,51 @@ header{
 }
 footer{
     height: 147px;
+    text-align: center;
+    overflow: hidden;
+    p:nth-of-type(1){
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px 0;
+        a{
+            padding: 0 15px;
+          color: #fff;
+        }
+    }
+    p:nth-of-type(2){
+        color: #83888a;
+        margin-bottom: 20px;
+    }
+    p:nth-of-type(3){
+        width: 500px;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 auto;
+        color: #83888a;
+        span{
+            float: left;
+            padding-right: 15px;
+        }
+        span:last-child{
+            padding-top: 5px;
+            em{
+                display: inline-block;
+                margin-right:15px;
+                width: 25px;
+                height: 25px;
+                background: url(../imgs/footer.png)no-repeat left top;
+            }
+            em:nth-of-type(2){
+                background-position-x: -36px;
+            }
+            em:nth-of-type(3){
+                background-position-x: -75px;
+            }
+            em:nth-of-type(4){
+                width: 70px;
+                background-position-x: -114px;
+            }
+        }
+    }
 }

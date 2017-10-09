@@ -8,7 +8,7 @@
 .comp-detail {
     @include middle;
     overflow: hidden;
-    margin-top:40px;
+    margin:40px auto; 
     dl {
         height: 256px;
         dt {

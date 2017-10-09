@@ -15,11 +15,14 @@ import './scss/loginReg.scss';
 import './scss/termsOfService.scss';
 import './scss/decorationRaiders.scss';
 import './scss/riji.scss';
-
+import './scss/promise.scss';
 import './scss/fatie.scss';
 import LoginReg from './script/loginReg.js';
 LoginReg.login();
 LoginReg.loginyanzheng();
+
+import Fatie from './script/fatie.js';
+Fatie.fatie();
 
 if(sessionStorage.getItem('username')){
 	$('#log .change').html('<em>&#xe6cb;</em>'+'欢迎'+sessionStorage.getItem('username'));

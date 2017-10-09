@@ -1,149 +1,156 @@
-export default{	
-	login:function(){
-		if(localStorage.getItem('num')){
+export default {
+	login: function() {
+		if(localStorage.getItem('num')) {
 			var n = localStorage.getItem('num');
-			switch (n){
-					case '0': {
-							$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
-							$('#login').css('display','block');
-							$('#register').css('display','none');
-							$('#log .change').attr('src','view/loginReg.html');
+			switch(n) {
+				case '0':
+					{
+						$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
+						$('#login').css('display', 'block');
+						$('#register').css('display', 'none');
+						$('#log .change').attr('src', 'view/loginReg.html');
 					};
-						break;
-					case '1': {
-						$('#loginTitlt1').addClass('login-active').siblings().removeClass('login-active');		
-						$('#login').css('display','none');
-						$('#register').css('display','block');
+					break;
+				case '1':
+					{
+						$('#loginTitlt1').addClass('login-active').siblings().removeClass('login-active');
+						$('#login').css('display', 'none');
+						$('#register').css('display', 'block');
 					}
-						break;
-				}
+					break;
+			}
 		}
 		//登录样式显现与影藏
-		$('#login-tunp a').on('click',function(){
+		$('#login-tunp a').on('click', function() {
 			var i = $(this).index();
 			$(this).addClass('login-active').siblings().removeClass('login-active');
-			switch (i){
-				case 0: {
-					$('#login').css('display','block');
-					$('#register').css('display','none');
-					
-				};
+			switch(i) {
+				case 0:
+					{
+						$('#login').css('display', 'block');
+						$('#register').css('display', 'none');
+
+					};
 					break;
-				case 1: {
-					$('#login').css('display','none');
-					$('#register').css('display','block');
-				}
+				case 1:
+					{
+						$('#login').css('display', 'none');
+						$('#register').css('display', 'block');
+					}
 					break;
 			}
 		})
-		
+
 		//登录验证
-		$('#login-login').on('click',function(){
-			if($('#username').val().toString().trim()===''){
+		$('#login-login').on('click', function() {
+			if($('#username').val().toString().trim() === '') {
 				$('#username-judge').html('请输入用户名');
 				return false;
-			}else{
+			} else {
 				$('#username-judge').html('');
 			}
-			if($('#password').val().toString().trim()==''){
+			if($('#password').val().toString().trim() == '') {
 				$('#password-judge').html('请输入密码');
 				return false;
-			}else{
+			} else {
 				$('#password-judge').html('');
 			}
 			$.ajax({
-				type:"get",
-				data:{'user_phone':$('#username').val().toString(),'user_password':$('#password').val().toString()},
-				url:"http://www.drehome.com/dreamhome/user",
-				async:true,
-				success:function(data) {
+				type: "get",
+				data: {
+					'user_phone': $('#username').val().toString(),
+					'user_password': $('#password').val().toString()
+				},
+				url: "http://www.drehome.com/dreamhome/user",
+				async: true,
+				success: function(data) {
 					console.log(data);
-					switch (data.code){
-						case 0:alert('用户名或者密码错误！！！！')
+					switch(data.code) {
+						case 0:
+							alert('用户名或者密码错误！！！！')
 							break;
 						case 1:
-<<<<<<< HEAD
 							location.href = 'fatie.html';
-=======
-							location.href = 'fatie.html';
->>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
-							sessionStorage.setItem('username',$('#username').val().toString());
+							sessionStorage.setItem('username', $('#username').val().toString());
 							break;
 					}
 				}
-			
+
 			});
-			
+
 			return false;
 		})
-		
-		
+
 		//注册验证
-		$('#register-register').on('click',function(){
+		$('#register-register').on('click', function() {
 			var phon = /^1[34578]\d{9}$/;
 			var use = /^[a-zA-Z0-9_-]{3,6}$/;
 			var pas = /^[a-zA-Z0-9_-]{6,16}$/;
-			if(use.test($('#usn').val().toString().trim())===false){
+			if(use.test($('#usn').val().toString().trim()) === false) {
 				$('#usnJudge').html('请输入用户名，用户名为3-6位');
 				return false;
-			}else{
+			} else {
 				$('#usnJudge').html('');
 			}
-			
-			
-			if(pas.test($('#pwd1').val().toString().trim())==false){
+
+			if(pas.test($('#pwd1').val().toString().trim()) == false) {
 				$('#pwd1Judge').html('请输入密码,密码为6-16位');
 				return false;
-			}else{
+			} else {
 				$('#pwd1Judge').html('');
 			}
-			if(pas.test($('#pwd2').val().toString().trim())==false){
+			if(pas.test($('#pwd2').val().toString().trim()) == false) {
 				$('#pwd2Judge').html('请输入密码');
 				return false;
-			}else{
+			} else {
 				$('#pwd2Judge').html('');
 			}
-			
-			if($('#pwd1').val() !==$('#pwd2').val()){
+
+			if($('#pwd1').val() !== $('#pwd2').val()) {
 				$('#pwd2Judge').html('您输入的两次密码不一致');
 				return false;
 			}
-			if($('#phone').val().toString().trim()===''){
+			if($('#phone').val().toString().trim() === '') {
 				$('#phoneJudge').html('请输入手机号');
 				return false;
-			}else{
+			} else {
 				$('#phoneJudge').html('');
 			}
-			
-			
-			if(phon.test($('#phone').val().toString().trim())==false){
+
+			if(phon.test($('#phone').val().toString().trim()) == false) {
 				$('#phoneJudge').html('请输入正确的手机号');
 				return false;
-			}else{
+			} else {
 				$('#phoneJudge').html('');
 			}
-			
-			
-			if($('#verificationCode').val().toString().trim()===''){
+
+			if($('#verificationCode').val().toString().trim() === '') {
 				alert('请输入验证码')
 				$('#verificationCode').html('');
 				return false;
 			}
-			if($('#checkbox').prop('checked')!==true){
+			if($('#checkbox').prop('checked') !== true) {
 				alert('你还未同意用户协议');
 				return false;
 			}
-			console.log($('#usn').val().toString(),$('#pwd1').val().toString(),$('#pwd2').val().toString(),$('#phone').val().toString(),$('#verificationCode').val().toString());
+			console.log($('#usn').val().toString(), $('#pwd1').val().toString(), $('#pwd2').val().toString(), $('#phone').val().toString(), $('#verificationCode').val().toString());
 			$.ajax({
-<<<<<<< HEAD
-				type:"post",
-				url:"http://www.drehome.com/dreamhome/user",
-=======
-				type:"get",
-				url:"http://www.drehome.com/dreamhome/adduser",
->>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
-				data:{'user_name':$('#usn').val().toString(),'user_password':$('#pwd1').val().toString(),'repassword':$('#pwd2').val().toString(),'user_phone':$('#phone').val().toString(),'yanzhen':$('#verificationCode').val().toString()},
-				success:function(data) {
+				type: "get",
+				url: "http://www.drehome.com/dreamhome/adduser",
+//				xhrFields: {
+//					withCredentials: true
+//				},
+//				crossDomain: true,
+//				dataType: 'jsonp',
+
+				data: {
+					'user_name': $('#usn').val().toString(),
+					'user_password': $('#pwd1').val().toString(),
+					'repassword': $('#pwd2').val().toString(),
+					'user_phone': $('#phone').val().toString(),
+					'yanzhen': $('#verificationCode').val().toString()
+				},
+				success: function(data) {
 					console.log(data);
 					/*switch (data.code){
 						case 10:alert('你输入的手机号不一致');
@@ -160,48 +167,41 @@ export default{
 							break;
 					}*/
 				}
-			
+
 			});
 			return false;
 		})
-		
-		
-		
-		
+
 	},
-	
-	loginyanzheng:function(){
+
+	loginyanzheng: function() {
 		//发送验证码
 		var num = 30;
 		var timer;
-		$('#sendCode').on('click',function(){
+		$('#sendCode').on('click', function() {
 			$.ajax({
-<<<<<<< HEAD
-				type:"post",
-=======
-				type:"get",
->>>>>>> fcf58e808f65fad4969810b0ad206a6c6bd08b8a
-				data:{'user_phone':$('#phone').val().toString()},
-				url:"http://www.drehome.com/dreamhome/phone",
-				success:function(data) {
+				type: "get",
+				data: {
+					'user_phone': $('#phone').val().toString()
+				},
+				url: "http://www.drehome.com/dreamhome/phone",
+				success: function(data) {
 					console.log(data);
 				}
 			});
 			clearInterval(timer);
-		    timer = setInterval(function(){
-				$('#sendCode').html(num+'s');
-				if(num<0){
+			timer = setInterval(function() {
+				$('#sendCode').html(num + 's');
+				if(num < 0) {
 					clearInterval(timer);
 					$('#sendCode').html('重新发送验证码');
 					num = 30;
 				}
 				num--;
-			},1000);
-			
-			
+			}, 1000);
+
 		})
-		
+
 	}
-	
-	
+
 };

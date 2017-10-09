@@ -26,9 +26,13 @@ if(sessionStorage.getItem('username')){
 	$('#log .change').attr('href','view/fatie.html');
 	$('#log .change1').html('<em>&#xe6cb;</em>'+'欢迎'+sessionStorage.getItem('username'));
 	$('#log .change1').attr('href','fatie.html');
+}else{
+	$('#log .change').attr('href','view/loginReg.html');
+	$('#log .change1').attr('href','loginReg.html');
 }
 
 $('#log a').on('click',function(){
 	var i = $(this).index();
+	console.log(i)
 	localStorage.setItem('num',i);
 })

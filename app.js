@@ -31,13 +31,19 @@ if(sessionStorage.getItem('username')){
 		sessionStorage.removeItem('username');
 		$('#log .change').html('<em>&#xe6cb;</em>'+'登录');
 		$('#log .change').attr('href','view/loginReg.html');
+		$('#log .delet').html('注册');
+		$('#log .delet').attr('href','view/loginReg.html');
 		
 	})
+	$('#log .delet1').html('退出');
 	$('#log .delet1').on('click',function(){
 		sessionStorage.removeItem('username');
-		('#log .change1').html('<em>&#xe6cb;</em>'+'登录');
+		$('#log .change1').html('<em>&#xe6cb;</em>'+'登录');
 		$('#log .change1').attr('href','loginReg.html');
+		$('#log .delet1').html('注册');
+		$('#log .delet1').attr('href','loginReg.html');
 	})
+	
 	
 }else{
 	$('#log .change').attr('href','view/loginReg.html');
@@ -62,3 +68,5 @@ $('#log a').on('click',function(){
 import Diary from './script/diary.js';
 
 Diary.addDiary();
+import Decor from './script/decor.js';
+Decor.decorChange();

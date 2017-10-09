@@ -69,7 +69,7 @@ export default {
 							alert('用户名或者密码错误！！！！')
 							break;
 						case 1:
-							location.href = 'fatie.html';
+							//location.href = 'fatie.html';
 							sessionStorage.setItem('username', $('#username').val().toString());
 							break;
 					}
@@ -134,8 +134,8 @@ export default {
 			}
 			console.log($('#usn').val().toString(), $('#pwd1').val().toString(), $('#pwd2').val().toString(), $('#phone').val().toString(), $('#verificationCode').val().toString());
 			$.ajax({
-				type: "get",
-				url: "http://www.drehome.com/dreamhome/adduser",
+				type: "post",
+				url: "http://www.drehome.com/dreamhome/user",
 //				xhrFields: {
 //					withCredentials: true
 //				},
@@ -151,7 +151,7 @@ export default {
 				},
 				success: function(data) {
 					console.log(data);
-					/*switch (data.code){
+					switch (data.code){
 						case 10:alert('你输入的手机号不一致');
 							break;
 						case 20:alert('你输入的验证码不一致');
@@ -162,9 +162,13 @@ export default {
 							break;
 						case 50:alert('注册失败，数据已经存在')
 							break;
-						case 1:alert('注册成功')
+						case 1:{
+							$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
+							$('#login').css('display', 'block');
+							$('#register').css('display', 'none');
+						}
 							break;
-					}*/
+					}
 				}
 
 			});
@@ -185,7 +189,9 @@ export default {
 				},
 				url: "http://www.drehome.com/dreamhome/phone",
 				success: function(data) {
-					console.log(data);
+					if(data.code===60){
+						alert(data.msg);
+					}
 				}
 			});
 			clearInterval(timer);

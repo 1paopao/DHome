@@ -8,7 +8,6 @@ export default {
 						$('#loginTitlt').addClass('login-active').siblings().removeClass('login-active');
 						$('#login').css('display', 'block');
 						$('#register').css('display', 'none');
-						$('#log .change').attr('src', 'view/loginReg.html');
 					};
 					break;
 				case '1':

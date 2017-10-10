@@ -224,8 +224,18 @@
            float: left;
            width: 100%;
            display: none;
+           .fatie-title{
+               width: 100%;
+               padding: 10px 0;
+               border-bottom: 1px solid #ccc; 
+               margin-bottom: 10px;
+               #fatie-title{
+                   margin-left: 10px;
+               }
+           }
            form{
                 textarea{
+                    
                     width: 100%;
                     height: 40px;
                     border: 0;
@@ -234,6 +244,7 @@
                     &:focus{
                         outline: 0;
                     }
+                    
                 }
             }
             button{

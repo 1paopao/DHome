@@ -178,10 +178,30 @@ header{
             height: 325px;
             background: #000;
             div{
-                width: 440px;
-                height: 194px;
+                width: 360px;
+                height: 185px;
+                padding:9px 40px 0;
                 margin-top: 77px;
-                background: #d7d7d7;
+                background: #fff;
+                color: #949393;
+                h2{
+                    color: #000;
+                    line-height: 30px;
+                }
+                p{
+                    line-height: 20px;
+                    margin-bottom: 6px;
+                }
+                p:nth-of-type(2){
+                    font-size: 13px;
+                }
+                p:last-child{
+                    width: 77px;
+                    height: 20px;
+                    text-align: center;
+                    color: #4b4b4b;
+                    border: 1px solid #535353;
+                }
             }
         }
     }

@@ -27,7 +27,7 @@
 							<a href="riji.html">装修日记</a>
 						</li>
 						<li id="log">
-							<a class="change1" href="loginReg.html"><em>&#xe6cb;</em>登录</a><a href="loginReg.html">注册</a>
+							<a class="change1" href="loginReg.html"><em>&#xe6cb;</em>登录</a><a class="delet1" href="javascript:;">注册</a>
 						</li>
 					</ul>
 				</nav>
@@ -84,7 +84,7 @@
 				</aside>
 				<section>
 					<div class="user_info">
-						<form enctype="multipart/form-data">
+						<form enctype="multipart/form-data" >
 							<h2>个人资料</h2>
 							<p>
 								昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：
@@ -117,9 +117,12 @@
 					<div class="publish">
 						<form>
 							<h2>我的装修日记</h2>
-							<textarea placeholder="说点什么......"></textarea>
+							<div class="fatie-title">
+								<label for="fatie-title">标题:</label><input type="text" name="" id="fatie-title" value=""/>
+							</div>
+							<textarea id="fatie-con" placeholder="说点什么......"></textarea>
 						</form>
-						<button>发布日记</button>
+						<button id="fatie-release">发布日记</button>
 					</div>
 					<div class="collection">
 						<dl>

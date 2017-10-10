@@ -75,7 +75,7 @@ $(function(){
 		url:"http://www.drehome.com/dreamhome/company",
 		success:function(data){
 			var arr = data.data;
-//			console.log(arr);
+			console.log(arr);
 			var 
 				html = '',
 				str = '';
@@ -218,24 +218,21 @@ $(function(){
 		url:"http://www.drehome.com/dreamhome/companymain",
 		success:function(data){
 			var arr = data.data;
-//			console.log(arr);
 			var 
-				html = "",
-				id = [];
+				html = "";
 			arr.map(function(res){
-				html += `<li>
+				html += `<li data_id = ${res.company_id} >
 							<img src="${res.company_pic}" />
 							<div>
 								<p>${res.company_name}</p>
 							</div>
 						</li>`;
-				id.push(res.company_id);
 			})
 			$('.fitup ul').html(html);
-//			console.log(id)
 			$('.fitup ul').on('click','li',function(){
-				sessionStorage.setItem('home_company',$(this).text().toString().trim());
-				location.href = 'view/compdetail.html';
+				console.log($(this).attr('data_id'));
+				var id = $(this).attr('data_id');
+				location.href = 'view/compdetail.html?'+ id;
 				
 			})
 		}

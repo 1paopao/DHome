@@ -3,24 +3,22 @@ export default {
 	//显示用户的日记信息
 	init:function() {
 		//判断用户是否存在
-		if(sessionStorage.getItem('username')) {
 			//获取相对应用户的数据
 			var 
-				sname = sessionStorage.getItem('username'),
 				surl  = 'http://www.drehome.com/dreamhome/talkmain';
 			
 			//获取接口数据
 			$.get(surl,function(data) {
 				var 
 					oData = data.data;
-				
+//				console.log(oData);
 				//遍历数组
 				oData.map(function(el,i) {
 					//转换为时间？？？？
 					var 
 						time  = new Date(el.talk_time).toLocaleString();
 						
-					console.log(el);
+//					console.log(el);
 					$('.con').append(`<dl>
 									<dt><img src="${el.user.user_icon}"/></dt>
 									<dd>
@@ -28,21 +26,13 @@ export default {
 											<span>${el.talk_title}</span>
 											<span><em>${el.talk_collection}</em><em>${el.talk_level}</em></span>
 										</p>
-										<p>
-											<em>${el.company.city}</em>
-											<em>${el.company_design}m²</em>
-											<em>${el.company_style}</em>
-										</p>
 										<p>${el.talk_content}...<em class="look-detail" data-id="${el.talk_id}">查看详情>></em></p>
 										<p>${time}</p>
 									</dd>
 								</dl>
 							`);
-						
 				})
 			})
-			
-		}
 	},
 	//写日记
 	write:function() {

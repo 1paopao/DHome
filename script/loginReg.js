@@ -68,19 +68,7 @@ export default {
 						case 0:
 							alert('用户名或者密码错误！！！！')
 							break;
-						case 1:
-<<<<<<< HEAD
-
-
 							location.href = 'fatie.html';
-
-							location.href = 'fatie.html';
-							sessionStorage.setItem('username',$('#username').val().toString());
-
-							location.href = 'fatie.html';
-=======
-							//location.href = 'fatie.html';
->>>>>>> 2f7dce5ca9ff96443b6e42583e0172abc344222d
 							sessionStorage.setItem('username', $('#username').val().toString());
 							break;
 					}
@@ -145,18 +133,6 @@ export default {
 			}
 			console.log($('#usn').val().toString(), $('#pwd1').val().toString(), $('#pwd2').val().toString(), $('#phone').val().toString(), $('#verificationCode').val().toString());
 			$.ajax({
-<<<<<<< HEAD
-=======
-				type: "post",
-				url: "http://www.drehome.com/dreamhome/user",
-//				xhrFields: {
-//					withCredentials: true
-//				},
-//				crossDomain: true,
-//				dataType: 'jsonp',
->>>>>>> 2f7dce5ca9ff96443b6e42583e0172abc344222d
-
-
 				type:"post",
 				url:"http://www.drehome.com/dreamhome/user",
 				data: {

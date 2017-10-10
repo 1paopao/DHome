@@ -42,9 +42,7 @@ export default {
 				})
 			})
 			
-		} else {
-			alert('亲,请先登录哦~');
-		}
+		} 
 	},
 	//写日记
 	write:function() {

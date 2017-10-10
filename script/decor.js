@@ -1,10 +1,6 @@
 export default {
 //	chaxun
 	decorChange:function(){
-		var constant = 12;//常量
-		var total = 48;
-		var index = total/constant;
-		var num = 0;
 		if(sessionStorage.getItem('caseStyle')){
 			total = sessionStorage.getItem('caseStyle');
 		}
@@ -18,8 +14,6 @@ export default {
 		
 		
 		
-		console.log(total);
-		
 		function Ajax(n){
 			$.ajax({
 				type:"get",
@@ -28,33 +22,49 @@ export default {
 				async:true,
 				success:function(data){
 					console.log(data);
-					total = data.data.length;
 					
 				}
 			});
 		}
 		//分页效果
+		var pageData = [1,2,3,45,6,7,8,9,0,1,2,3,45,6,7,8,9,0,1,2,3,45,6,7,8,9,0];
+		var Count = pageData.length;//记录条数  
+	    var PageSize=5;//设置每页示数目  
+	    var PageCount=Math.ceil(Count/PageSize);//计算总页数  
+	    var currentPage =1;//当前页，默认为1
+	    
+	    for(var i=(currentPage-1)*PageSize;i<PageSize*currentPage;i++){    
+	        console.log(i) 
+	    }  
+		    
+	    
 		$('#dere-right').on('click',function(){
-			num++;
-			if(num>=total){
-				num=total;
-			}
-			console.log(111)
-			
-			$('#dere1').html(num);
+			for(i=(currentPage-1)*PageSize;i<PageSize*currentPage;i++){  
+				currentPage++;
+				if(currentPage>PageCount){
+					currentPage=1
+				}
+	            for(var i=(currentPage-1)*PageSize;i<PageSize*currentPage;i++){    
+			        console.log(i) 
+			    } 
+	        }  
+			$('#dere1').html(currentPage);
 		})
 		
 		$('#dere-left').on('click',function(){
-			num--;
-			if(num<=0){
-				num=0;
-			}
-			console.log(111)
 			
-			$('#dere1').html(num);
+			currentPage--;
+			if(currentPage<1){
+				currentPage=PageCount;
+			}
+	            for(var i=(currentPage-1)*PageSize;i<PageSize*currentPage;i++){    
+			        console.log(i) 
+			    } 
+			
+			$('#dere1').html(currentPage);
 		})
-		$('#dere2').html(total);
-		$('#dere1').html(num);
+		$('#dere2').html(PageCount);//总页数
+		$('#dere1').html(currentPage);//分页
 	}
 	
 	

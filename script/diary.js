@@ -20,7 +20,7 @@ export default {
 		})
 	}
 	,
-	//
+	//修改个人信息
 	modifyPerson:function(){
 		
 	}

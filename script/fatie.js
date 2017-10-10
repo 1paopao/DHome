@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default{
 	fatie:function(){
 		$('.tabs').each(function(i){
@@ -7,6 +8,30 @@ export default{
 					case 0:
 						$('.user_info').css('display','block');
 						$('.publish').css('display','none');
+=======
+$(function(){
+	$('.tabs').each(function(i){
+		$(this).click(function(){
+			$(this).parent().css("border-color","red").siblings().css("border-color","#c9c9c9");
+			switch (i){
+				case 0:
+					$('.user_info').css('display','block');
+					$('.publish').css('display','none');
+					$('.collection').css('display','none');
+					$('.collection_detail').css('display','none');
+					break;
+				case 1:
+					$('.user_info').css('display','none');
+					$('.publish').css('display','block');
+					$('.collection').css('display','none');
+					$('.collection_detail').css('display','none	');
+					break;
+				case 2:
+					$('.user_info').css('display','none');
+					$('.publish').css('display','none');
+					$('.collection').css('display','block');
+					$('.collection').on('click','.clicks',function(){
+>>>>>>> 2f7dce5ca9ff96443b6e42583e0172abc344222d
 						$('.collection').css('display','none');
 						$('.collection_detail').css('display','none');
 						break;

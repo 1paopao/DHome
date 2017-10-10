@@ -69,7 +69,28 @@ $(function(){
 		}
 	});
 	
-	
+	//查询公司
+	$.ajax({
+		type:"get",
+		url:"http://www.drehome.com/dreamhome/company",
+		success:function(data){
+			var arr = data.data;
+//			console.log(arr);
+			var 
+				html = '',
+				str = '';
+				arr.map(function(res){
+					html += `<option>${res.company_address}</option>`;
+				})
+			$('.search select').html(html);
+			$('#search').click(function(){
+				sessionStorage.setItem('city',$('select').val());
+				sessionStorage.setItem('companyName',$('.text').val());
+				location.href = 'view/compdetail.html';
+				$('.text').val('');
+			})
+		}
+	});
 	//根据鼠标进入方向出现遮罩层
 	$.ajax({
 		type:"get",
@@ -85,13 +106,18 @@ $(function(){
 						</li>`;
 			})
 			$('.psd ul').html(html);
+			//跳转详情页
+			$('.psd ul').on('click','li',function(){
+				sessionStorage.setItem('caseStyle',$(this).text().toString().trim());
+				location.href = 'view/decorationRaiders.html';
+			})
 			$(".psd ul li").hover(function(e) {
-		var e = e || event;
-		moveTo.call(this, e, true);
-	}, function(e) {
-		var e = e || event;
-		moveTo.call(this, e, false);
-	});
+				var e = e || event;
+				moveTo.call(this, e, true);
+			}, function(e) {
+				var e = e || event;
+				moveTo.call(this, e, false);
+			});
 	
 	function moveTo(e,bool) {
 		let top = $(this).offset().top,
@@ -208,9 +234,9 @@ $(function(){
 			$('.fitup ul').html(html);
 //			console.log(id)
 			$('.fitup ul').on('click','li',function(){
-				var i = $(this).index();
-//				localStorage.setItem()
-				location.href = '../view/compdetail.html?id='+id[i];
+				sessionStorage.setItem('home_company',$(this).text().toString().trim());
+				location.href = 'view/compdetail.html';
+				
 			})
 		}
 	});

@@ -9,21 +9,33 @@ Complist.init();
 /*公司详情*/
 import Compdetail from './script/compdetail.js';
 Compdetail.init();
+<<<<<<< HEAD
+Compdetail.search();
+Compdetail.detail();
+=======
 /*显示日记的列表*/
 import Showriji from './script/showriji.js';
 Showriji.init();
 Showriji.write();
 Showriji.showDairy();
 
+>>>>>>> 2f7dce5ca9ff96443b6e42583e0172abc344222d
 import './scss/home.scss';
 import './scss/loginReg.scss';
 import './scss/termsOfService.scss';
 import './scss/decorationRaiders.scss';
 import './scss/riji.scss';
+
+import './scss/promise.scss';
+
+
 import './scss/fatie.scss';
 import LoginReg from './script/loginReg.js';
 LoginReg.login();
 LoginReg.loginyanzheng();
+
+import Fatie from './script/fatie.js';
+Fatie.fatie();
 
 if(sessionStorage.getItem('username')){
 	$('#log .change').html('<em>&#xe6cb;</em>'+'欢迎'+sessionStorage.getItem('username'));

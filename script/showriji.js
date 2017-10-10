@@ -42,7 +42,7 @@ export default {
 				})
 			})
 			
-		} 
+		}
 	},
 	//写日记
 	write:function() {
